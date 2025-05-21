@@ -1,0 +1,29 @@
+# oh my posh setup
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh --config ~/.config/myshell/zen.toml)"
+fi
+
+# fish like auto-suggestions
+# https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# fix command not found: compdef 
+# before sourcing git stuff
+autoload -Uz compinit
+compinit
+
+# Bitwarden ssh agent
+export SSH_AUTH_SOCK=/Users/cmenezes/.bitwarden-ssh-agent.sock
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/cmenezes/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+#
+
+# git aliases and functions from
+# https://github.com/ohmyzsh/ohmyzsh/blob/master
+source ~/.config/myshell/git.zsh
+source ~/.config/myshell/git.plugin.zsh
+
