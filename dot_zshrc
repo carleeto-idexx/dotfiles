@@ -7,11 +7,6 @@ fi
 # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# fix command not found: compdef 
-# before sourcing git stuff
-autoload -Uz compinit
-compinit
-
 # Bitwarden ssh agent
 export SSH_AUTH_SOCK=/Users/cmenezes/.bitwarden-ssh-agent.sock
 
@@ -27,6 +22,8 @@ compinit
 source ~/.config/myshell/git.zsh
 source ~/.config/myshell/git.plugin.zsh
 
+# custom aliases
+source ~/.aliases
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
