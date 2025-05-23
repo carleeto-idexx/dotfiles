@@ -60,7 +60,7 @@ automatically-unhide-macos-hidden-apps = false
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
     inner.horizontal = 2
-    inner.vertical =   0
+    inner.vertical =   2
     outer.left =       5
     outer.bottom =     5
     outer.top =        5
