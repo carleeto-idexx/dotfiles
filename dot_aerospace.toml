@@ -123,8 +123,8 @@ automatically-unhide-macos-hidden-apps = false
     alt-1 = 'workspace 1'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
-    alt-ctrl-comma = 'move-node-to-monitor prev'
-    alt-ctrl-period = 'move-node-to-monitor next'
+    alt-ctrl-comma = 'move-node-to-monitor --focus-follows-window --wrap-around prev'
+    alt-ctrl-period = 'move-node-to-monitor --focus-follows-window --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
