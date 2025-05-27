@@ -13,6 +13,10 @@ export SSH_AUTH_SOCK=/Users/cmenezes/.bitwarden-ssh-agent.sock
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/cmenezes/.docker/completions $fpath)
 
+# Without this line, the git aliases below error out with
+# compinit - command not found
+autoload -Uz compinit && compinit
+
 # git aliases and functions from
 # https://github.com/ohmyzsh/ohmyzsh/blob/master
 source ~/.config/myshell/git.zsh
