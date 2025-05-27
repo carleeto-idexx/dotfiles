@@ -12,10 +12,6 @@ export SSH_AUTH_SOCK=/Users/cmenezes/.bitwarden-ssh-agent.sock
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/cmenezes/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
-#
 
 # git aliases and functions from
 # https://github.com/ohmyzsh/ohmyzsh/blob/master
@@ -24,4 +20,12 @@ source ~/.config/myshell/git.plugin.zsh
 
 # custom aliases
 source ~/.aliases
+
+# asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
