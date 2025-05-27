@@ -1,1 +1,6 @@
 alias ce="chezmoi edit"
+alias cdd="chezmoi diff"
+alias capp="chezmoi apply"
+alias cg="chezmoi git"
+alias ccd="chezmoi cd"
+
