@@ -120,8 +120,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-    alt-1 = 'workspace next'
-    alt-2 = 'workspace prev'
+    alt-1 = 'workspace-back-and-forth'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-monitor
     alt-ctrl-comma = 'move-node-to-monitor --focus-follows-window --wrap-around prev'
