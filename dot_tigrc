@@ -1,2 +1,3 @@
 set main-view	= line-number:no,interval=5 id:yes date:default author:full commit-title:yes,graph,refs,overflow=no
+bind main B !@git branch "%(prompt new branch name?)" %(commit)
 
