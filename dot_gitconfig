@@ -1,0 +1,24 @@
+[user]
+	# test
+	email = carl-menezes@idexx.com 
+	name = Carl Menezes
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINW7cNiR+T4rfkV2/MvHpEDNq9BNXzd3ijSvGv1hRXmf github idexx
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+	tagsign = true
+
+[maintenance]
+	repo = /Users/cmenezes/code/admin/admin-backend
+	repo = /Users/cmenezes/code/prototypes/a4i
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
