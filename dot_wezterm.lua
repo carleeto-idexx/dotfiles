@@ -14,5 +14,21 @@ config.initial_rows = 28
 config.font_size = 12
 config.color_scheme = "Dracula (Official)"
 
+config.window_decorations = "RESIZE"
+config.enable_tab_bar = false
+
+config.keys = {
+	{
+		key = "d",
+		mods = "CMD",
+		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "d",
+		mods = "CMD|SHIFT",
+		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+}
+
 -- Finally, return the configuration to wezterm:
 return config
