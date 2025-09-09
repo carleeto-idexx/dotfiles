@@ -5,5 +5,5 @@ alias cg="chezmoi git"
 alias ccd="chezmoi cd"
 alias trial="aws sts get-caller-identity --profile trial"
 alias staging="aws sts get-caller-identity --profile staging"
-alias hns="helm list --all-namespaces -o json | jq -r '.[].namespace' | sort | uniq -c"
+alias hns="helm list --all-namespaces -o json | jq -r '.[].namespace' | sort | uniq"
 
