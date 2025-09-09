@@ -28,6 +28,11 @@ config.keys = {
 		mods = "CMD|SHIFT",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
+	{
+		key = "k",
+		mods = "CMD",
+		action = wezterm.action.SendString("clear\n"),
+	},
 }
 
 -- Finally, return the configuration to wezterm:
