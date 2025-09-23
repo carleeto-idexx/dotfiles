@@ -16,6 +16,7 @@ config.color_scheme = "Dracula (Official)"
 
 config.window_decorations = "RESIZE"
 config.enable_tab_bar = false
+config.window_close_confirmation = "NeverPrompt"
 
 config.keys = {
 	{
