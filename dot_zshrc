@@ -38,3 +38,5 @@ fi
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
+# must be added after compinit is called
+eval "$(zoxide init zsh)"
