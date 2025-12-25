@@ -22,15 +22,38 @@ To initialize these dotfiles on a new machine:
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply carleeto-idexx
 ```
 
-### Prerequisites
+> [!TIP]
+> This command automatically installs all required dependencies (Homebrew, zoxide, etc.) on both macOS and NixOS.
 
-Ensure you have the following installed:
-- [Homebrew](https://brew.sh/)
-- `chezmoi`
-- `wezterm`
-- `aerospace`
+## 🛠 Maintenance & Workflow
+
+### 1. Update your Configuration
+To modify a file (e.g., your `.zshrc`), use the `chezmoi edit` command (aliased to `ce`):
+
+```bash
+ce ~/.zshrc
+```
+
+### 2. Push Changes to GitHub
+When you're happy with your local changes, sync them back to your repository and push to GitHub using the `csync` alias:
+
+```bash
+csync
+```
+
+### 3. Pull Changes from GitHub
+If you've made changes on another machine, pull them down to your current machine:
+
+```bash
+chezmoi update
+```
 
 ## ⌨️ Key Features & Bindings
+
+- **🚀 Automated Setup**: One-command installation for macOS and NixOS.
+- **🛡️ Identity Agnostic**: No hardcoded Git names, emails, or SSH keys. Configure each machine locally for maximum flexibility.
+- **📦 Package Management**: Integrated support for Homebrew, asdf, and Nix.
+- **🐚 Modern Shell**: Zsh with `oh-my-posh` (Zen theme), `zoxide`, and auto-suggestions.
 
 ### WezTerm
 - `CMD + d`: Split horizontal

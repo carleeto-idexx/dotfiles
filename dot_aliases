@@ -3,6 +3,7 @@ alias cdd="chezmoi diff"
 alias capp="chezmoi apply"
 alias cg="chezmoi git"
 alias ccd="chezmoi cd"
+alias csync='chezmoi git add . && chezmoi git commit -m "sync dotfiles" && chezmoi git push'
 alias trial="aws sts get-caller-identity --profile trial"
 alias staging="aws sts get-caller-identity --profile staging"
 alias hns="helm list --all-namespaces -o json | jq -r '.[].namespace' | sort | uniq"
