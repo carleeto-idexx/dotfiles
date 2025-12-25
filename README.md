@@ -16,11 +16,25 @@ My personal macOS development environment, managed with [chezmoi](https://www.ch
 
 ## 🚀 Quick Start
 
-To initialize these dotfiles on a new machine:
+This section guides you through setting up these dotfiles on a new machine or updating an existing one.
+
+### New Machine Setup
+To initialize these dotfiles on a new machine, run the following command. This will install `chezmoi`, clone this repository, and execute the `run_once_bootstrap.sh` script to install all necessary dependencies.
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply carleeto-idexx
 ```
+
+> [!TIP]
+> This command will install `chezmoi`, clone this repository, and run the `run_once_bootstrap.sh` script to install dependencies.
+
+### Existing Machine (Sync Changes)
+If you already have `chezmoi` installed and want to pull the latest changes (including new scripts like the bootstrap):
+
+```bash
+chezmoi update
+```
+*This command will perform a `git pull --rebase` in your source directory and `apply` any changes.*
 
 > [!TIP]
 > This command automatically installs all required dependencies (Homebrew, zoxide, etc.) on both macOS and NixOS.
