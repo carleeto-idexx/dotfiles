@@ -40,6 +40,3 @@ Ensure you have the following installed:
 ### Zsh
 - `z`: Fast directory jumping (zoxide)
 - `git`: Enhanced with custom aliases and plugins
-
----
-*Generated with ❤️ and Antigravity*
