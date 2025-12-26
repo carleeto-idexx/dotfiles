@@ -7,8 +7,21 @@ fi
 # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Bitwarden ssh agent
-export SSH_AUTH_SOCK={{ .chezmoi.homeDir }}/.bitwarden-ssh-agent.sock
+# SSH Agent Detection (1Password / Bitwarden)
+{{- if eq .chezmoi.os "darwin" }}
+ONEPASSWORD_SOCK="${HOME}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+{{- else if eq .chezmoi.os "linux" }}
+ONEPASSWORD_SOCK="${HOME}/.1password/agent.sock"
+{{- end }}
+BITWARDEN_SOCK="${HOME}/.bitwarden-ssh-agent.sock"
+
+if [ -S "$ONEPASSWORD_SOCK" ]; then
+    export SSH_AUTH_SOCK="$ONEPASSWORD_SOCK"
+    echo "🛡️ Using 1Password SSH Agent"
+elif [ -S "$BITWARDEN_SOCK" ]; then
+    export SSH_AUTH_SOCK="$BITWARDEN_SOCK"
+    echo "🔐 Using Bitwarden SSH Agent"
+fi
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=({{ .chezmoi.homeDir }}/.docker/completions $fpath)
