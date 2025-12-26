@@ -64,6 +64,23 @@ If you've made changes on another machine, pull them down to your current machin
 chezmoi update
 ```
 
+## 🧪 Testing & Simulation
+
+To simulate setting up these dotfiles on a completely new machine without formatting your computer:
+
+```bash
+# 1. Remove the local source repository
+rm -rf "$(chezmoi source-path)"
+
+# 2. Clear the chezmoi state (forces run_once_ scripts to re-run)
+chezmoi state delete --bucket=scriptState
+
+# 3. Optional: Delete the chezmoi binary if installed in ~/bin
+rm -f ~/bin/chezmoi
+
+# 4. Run the Quick Start command from the top of this README
+```
+
 ## ⌨️ Key Features & Bindings
 
 - **🚀 Automated Setup**: One-command installation for macOS and NixOS.
