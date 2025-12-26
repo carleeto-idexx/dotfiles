@@ -16,28 +16,30 @@ My personal macOS development environment, managed with [chezmoi](https://www.ch
 
 ## 🚀 Quick Start
 
-This section guides you through setting up these dotfiles on a new machine or updating an existing one.
-
 ### New Machine Setup
-To initialize these dotfiles on a new machine, run the following command. This will install `chezmoi`, clone this repository, and execute the `run_once_bootstrap.sh` script to install all necessary dependencies.
+To initialize these dotfiles on a new machine:
 
 ```bash
+# Using HTTPS (Ensure you have a Personal Access Token ready)
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply carleeto-idexx
+
+# OR using SSH (If your SSH keys are already configured)
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply git@github.com:carleeto-idexx/dotfiles.git
 ```
 
+> [!IMPORTANT]
+> Since this is a **private repository**, you must ensure your GitHub credentials (PAT or SSH keys) are configured on the machine before running the command.
+
 > [!TIP]
-> This command will install `chezmoi`, clone this repository, and run the `run_once_bootstrap.sh` script to install dependencies.
+> This command will install `chezmoi`, clone the entire repository (including the bootstrap script), and automatically run `run_once_before_bootstrap.sh` to install CLI dependencies.
 
 ### Existing Machine (Sync Changes)
-If you already have `chezmoi` installed and want to pull the latest changes (including new scripts like the bootstrap):
+If you already have `chezmoi` installed and want to pull the latest changes:
 
 ```bash
 chezmoi update
 ```
-*This command will perform a `git pull --rebase` in your source directory and `apply` any changes.*
-
-> [!TIP]
-> This command automatically installs all required dependencies (Homebrew, zoxide, etc.) on both macOS and NixOS.
+*This command pulls the latest commits and runs `chezmoi apply`.*
 
 ## 🛠 Maintenance & Workflow
 
