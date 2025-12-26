@@ -73,7 +73,7 @@ To simulate setting up these dotfiles on a completely new machine without format
 rm -rf "$(chezmoi source-path)"
 
 # 2. Clear the chezmoi state (forces run_once_ scripts to re-run)
-chezmoi state delete --bucket=scriptState
+chezmoi state reset
 
 # 3. Optional: Delete the chezmoi binary if installed in ~/bin
 rm -f ~/bin/chezmoi
