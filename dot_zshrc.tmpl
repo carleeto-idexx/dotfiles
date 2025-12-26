@@ -8,10 +8,10 @@ fi
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Bitwarden ssh agent
-export SSH_AUTH_SOCK={{ .homeDir }}/.bitwarden-ssh-agent.sock
+export SSH_AUTH_SOCK={{ .chezmoi.homeDir }}/.bitwarden-ssh-agent.sock
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=({{ .homeDir }}/.docker/completions $fpath)
+fpath=({{ .chezmoi.homeDir }}/.docker/completions $fpath)
 
 # Without this line, the git aliases below error out with
 # compinit - command not found
