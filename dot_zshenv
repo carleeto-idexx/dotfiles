@@ -2,3 +2,4 @@ export PATH=$HOME/go/bin/:$PATH
 if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
+[[ -f ~/workconfig/env ]] && source ~/workconfig/env

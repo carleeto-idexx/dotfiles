@@ -34,6 +34,52 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.SendString("clear\n"),
 	},
+	{
+		key = "s",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action_callback(function(window, pane)
+			local tabs = {}
+			for _, tab_info in ipairs(window:mux_window():tabs_with_info()) do
+				local tab_pane = tab_info.tab:active_pane()
+				if tab_pane:get_domain_name() == "unix" then
+					local cwd = tab_pane:get_current_working_dir()
+					local dir = cwd and cwd.file_path or ""
+					local process = tab_pane:get_foreground_process_name() or ""
+					process = process:match("([^/]+)$") or ""
+					if process == "" then
+						process = tab_pane:get_title() or ""
+					end
+					local label = string.format(
+						"%d: %s (%s)",
+						tab_info.index + 1,
+						process,
+						dir
+					)
+					table.insert(tabs, {
+						id = tostring(tab_info.tab:tab_id()),
+						label = label,
+					})
+				end
+			end
+			window:perform_action(
+				wezterm.action.InputSelector({
+					title = "Unix Domain Tabs",
+					choices = tabs,
+					action = wezterm.action_callback(function(win, _, id)
+						if id then
+							for _, tab_info in ipairs(win:mux_window():tabs_with_info()) do
+								if tostring(tab_info.tab:tab_id()) == id then
+									tab_info.tab:activate()
+									break
+								end
+							end
+						end
+					end),
+				}),
+				pane
+			)
+		end),
+	},
 }
 
 -- Finally, return the configuration to wezterm:
