@@ -1,0 +1,23 @@
+# --- Default GitHub Configuration (for all repos not matching idexx-laboratories) ---
+Host github.com
+  HostName github.com
+  User git
+  # This tells SSH to use *only* the keys specified below or via the agent, 
+  # which helps prevent the 'idexx-emu' key from being offered here accidentally.
+  IdentityFile ~/.ssh/id_rsa.pub
+  IdentitiesOnly yes
+
+# --- IDEXX EMU Configuration (used when Git rewrites the URL to 'github-emu') ---
+Host github-emu
+  HostName github.com
+  User git
+  # This is a custom alias, so it gets its own configuration context.
+  # It will use the 'idexx-emu' key offered by the agent here.
+  IdentityFile ~/.ssh/id_rsa_emu.pub
+  IdentitiesOnly yes
+
+# --- GitLab Configuration ---
+Host gitlab.com
+  HostName gitlab.com
+  User git
+  IdentitiesOnly yes
