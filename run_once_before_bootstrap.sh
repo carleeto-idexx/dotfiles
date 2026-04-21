@@ -48,6 +48,13 @@ else
     exit 1
 fi
 
+# Install full Brewfile if present (macOS only). This covers all formulae,
+# casks, taps, and VS Code extensions captured at dump time. Idempotent.
+if [[ "$OSTYPE" == "darwin"* ]] && [ -f "$PWD/Brewfile" ]; then
+    echo "📦 Installing packages from Brewfile..."
+    brew bundle --file="$PWD/Brewfile"
+fi
+
 # Clone zsh-autosuggestions if missing
 if [ ! -d "$HOME/.zsh/zsh-autosuggestions" ]; then
     echo "📥 Cloning zsh-autosuggestions..."
