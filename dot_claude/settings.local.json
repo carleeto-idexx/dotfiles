@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(which slack:*)",
+      "Bash(slack search:*)",
+      "Bash(slack:*)",
+      "mcp__plugin_slack_slack__slack_search_public_and_private",
+      "mcp__plugin_slack_slack__slack_search_users",
+      "mcp__plugin_slack_slack__slack_send_message",
+      "Bash(git add:*)",
+      "mcp__plugin_slack_slack__slack_search_channels",
+      "mcp__plugin_slack_slack__slack_read_channel",
+      "Bash(git:*)",
+      "Bash(find:*)",
+      "mcp__plugin_slack_slack__slack_schedule_message",
+      "mcp__plugin_slack_slack__slack_read_thread",
+      "mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql",
+      "mcp__plugin_atlassian_atlassian__search",
+      "mcp__plugin_atlassian_atlassian__searchConfluenceUsingCql",
+      "mcp__plugin_atlassian_atlassian__getAccessibleAtlassianResources",
+      "mcp__datadog__search_datadog_services",
+      "mcp__datadog__search_datadog_monitors",
+      "mcp__datadog__search_datadog_hosts",
+      "mcp__datadog__search_datadog_logs",
+      "mcp__datadog__analyze_datadog_logs",
+      "mcp__datadog__search_datadog_spans",
+      "Bash(cp:*)",
+      "Bash(glab:*)",
+      "Bash(which vsai:*)",
+      "Bash(gh auth:*)",
+      "Bash(vsai standard:*)",
+      "WebFetch(domain:wezterm.org)",
+      "Bash(chezmoi edit:*)",
+      "Bash(chezmoi apply:*)",
+      "mcp__plugin_atlassian_atlassian__getConfluencePage",
+      "mcp__plugin_atlassian_atlassian__atlassianUserInfo"
+    ]
+  }
+}
