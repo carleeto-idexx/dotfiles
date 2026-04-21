@@ -53,3 +53,6 @@ autoload -Uz compinit && compinit
 
 # must be added after compinit is called
 eval "$(zoxide init zsh)"
+
+# user-local binaries (claude, cursor-agent, slack, ezyaccess, etc.)
+export PATH="$HOME/.local/bin:$PATH"
