@@ -23,12 +23,22 @@ final_space = true
     type = 'path'
     style = 'plain'
 
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'full'
+
   [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     foreground = 'p:grey'
     background = 'transparent'
     type = 'git'
     style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      cache_duration = 'none'
+      commit_icon = '@'
+      fetch_status = true
 
 [[blocks]]
   type = 'rprompt'
@@ -41,6 +51,10 @@ final_space = true
     type = 'executiontime'
     style = 'plain'
 
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      threshold = 5000
+
 [[blocks]]
   type = 'prompt'
   alignment = 'left'
@@ -52,3 +66,6 @@ final_space = true
     style = 'plain'
     foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}magenta{{end}}']
     newline = true
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
